@@ -13,8 +13,6 @@ import com.dao.TypeDao;
 import com.entity.Type;
 
 
-
-
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration(locations="classpath:spring-context.xml")
 @Transactional
