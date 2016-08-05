@@ -45,7 +45,12 @@ public class AdvertisementDaoTest {
 
 	@Test
 	public void testGet() {
-		fail("Not yet implemented");
+		
+		for(Advertisement a : advertisementDao.getAll()){
+			System.out.println(a.getPrice() + "-----------------------");
+		}
+		
+		assertEquals(13800,advertisementDao.get(1).getPrice(),0);
 	}
 
 	@Test

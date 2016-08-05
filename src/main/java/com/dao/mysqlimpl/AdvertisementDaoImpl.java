@@ -45,7 +45,8 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 
 	public List<Advertisement> getAllByPrice(double minPrice, double maxPrice) {
-		return getSession().createQuery("from Advertisement a where a.price >= :minPrice and a.price <= :maxPrice")
+		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
+				+ " and a.price <= :maxPrice")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.list();
@@ -55,7 +56,9 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 
 	public List<Advertisement> getAllByModelAndPrice(int modelId, double minPrice, double maxPrice) {
 		return getSession()
-				.createQuery("from Advertisement a where a.price >= :minPrice and a.price <= :maxPrice and a.model.id = :model")
+				.createQuery("from Advertisement a where a.price >= :minPrice"
+				+ " and a.price <= :maxPrice"
+				+ " and a.model.id = :model")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.setInteger("model", modelId)
@@ -66,7 +69,9 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 
 	public List<Advertisement> getAllByModelAndYear(int modelId, int minYear, int maxYear) {
 		return getSession()
-				.createQuery("from Advertisement a where a.model.id = :modelId and a.year >= :minYear and a.year <= :maxYear")
+				.createQuery("from Advertisement a where a.model.id = :modelId"
+				+ " and a.year >= :minYear"
+				+ " and a.year <= :maxYear")
 				.setInteger("modelId", modelId)
 				.setInteger("minYear", minYear)
 				.setInteger("maxYear", maxYear)
@@ -92,7 +97,11 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllbyModelAndPriceAndYear(int modelId, double minPrice, double maxPrice, int minYear, int maxYear) {
-		return getSession().createQuery("from Advertisement a where a.model.id = :modelId and a.price >= :minPrice and a.price <= :maxPrice and a.year >= :minYear and a.year >= :maxYear")
+		return getSession().createQuery("from Advertisement a where a.model.id = :modelId"
+				+ " and a.price >= :minPrice"
+				+ " and a.price <= :maxPrice"
+				+ " and a.year >= :minYear"
+				+ " and a.year >= :maxYear")
 				.setInteger("modelId", modelId)
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
@@ -101,55 +110,120 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllbyModelAndPriceAndCity(int modelId, double minPrice, double maxPrice, int cityId) {
-		return null;
+		return getSession().createQuery("from Advertisement a where a.model.id = :modelId"
+				+ " and a.price >= :minPrice"
+				+ " and a.price <= :maxPrice"
+				+ " and a.city.id = :cityId")
+				.setInteger("modelId", modelId)
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrise", maxPrice)
+				.setInteger("cityId", cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllbyModelAndPriceAndYearAndCity(int modelId, double minPrice, double maxPrice,
 			int minYear, int maxYear, int cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a model.id = :modelId "
+				+ "and a.price >= :minPrice "
+				+ "and a.price <= maxPrice "
+				+ "and a.year >= :minYear"
+				+ "and a.year <= :maxYear"
+				+ "and a.city.id = :cityId")
+				.setInteger("modelId", modelId)
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrice", maxPrice)
+				.setInteger("minYear", minYear)
+				.setInteger("maxYear", maxYear)
+				.setInteger("cityId", cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndYear(double minPrice, double maxPrice, int minYear, int maxYear) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
+				+ "and a.price <= :maxPrice"
+				+ "and a.year >= :minYear"
+				+ "and a.year <= :maxYear")
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrice", maxPrice)
+				.setDouble("minYear", minYear)
+				.setDouble("maxYear", maxYear)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndCity(double minPrice, double maxPrice, int cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
+				+ "and a.price <= :maxPrice"
+				+ "and a.city.id = cityId")
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrice", maxPrice)
+				.setInteger("cityId",cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndUser(double minPrice, double maxPrice, int userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
+				+ "and a.price <= :maxPrice"
+				+ "and a.city.id = cityId")
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrice", maxPrice)
+				.setInteger("userId", userId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllbyPriceAndYearAndCity(double minPrice, double maxPrice, int minYear, int maxYear,
 			int cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
+				+ "and a.price <= :maxPrice"
+				+ "and a.year >= :minYear"
+				+ "and a.year <= :maxYear"
+				+ "and a.city.id = :cityId")
+				.setDouble("minPrice", minPrice)
+				.setDouble("maxPrice", maxPrice)
+				.setInteger("minYear", minYear)
+				.setInteger("maxYear", maxYear)
+				.setInteger("cityId", cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByYear(int minYear, int maxYear) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.year >= :minYear"
+				+ "and a.year <= :maxYear")
+				.setInteger("minYear", minYear)
+				.setInteger("maxYear", maxYear)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByYearAndCity(int minYear, int maxYear, int cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.year >= :minYear"
+				+ "and a.year <= :maxYear"
+				+ "and a.city.id = :cityId")
+				.setInteger("minYear", minYear)
+				.setInteger("maxYear", maxYear)
+				.setInteger("cityId", cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByCity(int cityId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.city.id = :cityId")
+				.setInteger("cityId", cityId)
+				.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByUser(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return getSession().createQuery("from Advertisement a where a.user.id = :userId")
+				.setInteger("userId", userId)
+				.list();
 	}
 
 }
