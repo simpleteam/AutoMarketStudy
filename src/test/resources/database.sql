@@ -31,12 +31,12 @@ INSERT INTO MODEL VALUES (6,'focus',3)
 INSERT INTO MODEL VALUES (7,'mustang',3)
 INSERT INTO MODEL VALUES (8,'fiesta',3);
 
-INSERT INTO ADVERTISEMENT VALUES (1,'good engine',13800,1,2)
-INSERT INTO ADVERTISEMENT VALUES (2,'good engine',17800,2,3)
-INSERT INTO ADVERTISEMENT VALUES (3,'good engine',27800,1,3)
-INSERT INTO ADVERTISEMENT VALUES (4,'good engine',37800,3,1)
-INSERT INTO ADVERTISEMENT VALUES (5,'good engine',67800,4,2)
-INSERT INTO ADVERTISEMENT VALUES (6,'good engine',57800,5,1)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (1,'good engine',13800,1,2,2004)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (2,'good engine',17800,2,3,2005)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (3,'good engine',27800,1,3,2006)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (4,'good engine',37800,3,1,2007)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (5,'good engine',67800,4,2,2008)
+INSERT INTO ADVERTISEMENT(id,description,price,model_id,user_id,year) VALUES (6,'good engine',57800,5,1,2009)
 
 INSERT INTO hibernate_sequence VALUES (4)
 INSERT INTO hibernate_sequence VALUES (4)
