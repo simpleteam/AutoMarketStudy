@@ -19,19 +19,19 @@ public class MarkService {
 	@Autowired
 	private TypeDao typeDao;
 	
-	public void addMark(MarkView mark){
+	public void add(MarkView mark){
 		markDao.add(viewToEntity(mark));
 	}
 	
-	public MarkView getMarkById(int id){
+	public MarkView get(int id){
 		return new MarkView(markDao.get(id));
 	}
 	
-	public void updateMark(MarkView mark){
+	public void update(MarkView mark){
 		markDao.update(viewToEntity(mark));
 	}
 	
-	public void deleteMark(MarkView mark){
+	public void delete(MarkView mark){
 		markDao.delete(viewToEntity(mark));
 	}
 	
