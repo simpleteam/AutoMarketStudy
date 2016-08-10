@@ -15,23 +15,23 @@ public class RegionService {
 	@Autowired
 	private RegionDao regionDao;
 
-	public void addRegion(RegionView region) {
+	public void add(RegionView region) {
 		regionDao.add(viewToEntity(region));
 	}
 
-	public RegionView getRegionById(int id) {
+	public RegionView get(int id) {
 		return new RegionView(regionDao.get(id));
 	}
 
-	public void updateRegion(RegionView region) {
+	public void update(RegionView region) {
 		regionDao.update(viewToEntity(region));
 	}
 
-	public void deleteRegion(RegionView region) {
+	public void delete(RegionView region) {
 		regionDao.delete(viewToEntity(region));
 	}
 	
-	public RegionView getRegionByName(String name){
+	public RegionView getByName(String name){
 		return new RegionView(regionDao.getByName(name));
 	}
 
