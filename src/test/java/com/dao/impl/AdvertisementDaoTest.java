@@ -45,47 +45,53 @@ public class AdvertisementDaoTest {
 
 	@Test
 	public void testGet() {
-		
-		for(Advertisement a : advertisementDao.getAll()){
-			System.out.println(a.getPrice() + "-----------------------");
-		}
-		
 		assertEquals(13800,advertisementDao.get(1).getPrice(),0);
 	}
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		Advertisement advertisement = advertisementDao.get(2);
+		assertEquals(17800, advertisement.getPrice(),0);
+		advertisement.setPrice(18200);
+		advertisementDao.update(advertisement);
+		assertEquals(18200, advertisementDao.get(2).getPrice(),0);
 	}
 
 	@Test
 	public void testGetAll() {
-		fail("Not yet implemented");
+		assertEquals(6, advertisementDao.getAll().size());
 	}
 
 	@Test
 	public void testGetAllByModel() {
-		fail("Not yet implemented");
+		assertEquals(2,advertisementDao.getAllByModel(1).size());
 	}
 
 	@Test
 	public void testGetAllByPrice() {
-		fail("Not yet implemented");
+		assertEquals(6, advertisementDao.getAllByPrice(13800, 67800).size());
+		assertEquals(6, advertisementDao.getAllByPrice(13000, 68000).size());
+		assertEquals(5, advertisementDao.getAllByPrice(13800, 67799.9).size());
+		assertEquals(5, advertisementDao.getAllByPrice(13801, 67800).size());
+		assertEquals(3, advertisementDao.getAllByPrice(17000, 39000).size());
 	}
 
 	@Test
 	public void testGetAllByModelAndPrice() {
-		fail("Not yet implemented");
+		assertEquals(2, advertisementDao.getAllByModelAndPrice(1, 13000, 28000).size());
 	}
 
 	@Test
 	public void testGetAllByModelAndYear() {
-		fail("Not yet implemented");
+		assertEquals(2,advertisementDao.getAllByModelAndYear(1, 2004, 2006));
 	}
 
 	@Test
 	public void testGetAllByModelAndCity() {
-		fail("Not yet implemented");
+		
+		
+		assertEquals(0,advertisementDao.getAllByModelAndCity(3, 1).size());
+		assertEquals(1,advertisementDao.getAllByModelAndCity(3, 2).size());
 	}
 
 	@Test
