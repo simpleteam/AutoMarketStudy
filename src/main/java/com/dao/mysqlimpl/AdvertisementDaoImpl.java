@@ -115,7 +115,7 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 		return getSession().createQuery("from Advertisement a where a.model.id = :modelId"
 				+ " and a.price >= :minPrice"
 				+ " and a.price <= :maxPrice"
-				+ " and a.city.id = :cityId")
+				+ " and a.user.city.id = :cityId")
 				.setInteger("modelId", modelId)
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrise", maxPrice)
@@ -126,12 +126,12 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllbyModelAndPriceAndYearAndCity(int modelId, double minPrice, double maxPrice,
 			int minYear, int maxYear, int cityId) {
-		return getSession().createQuery("from Advertisement a where a model.id = :modelId "
-				+ "and a.price >= :minPrice "
-				+ "and a.price <= maxPrice "
-				+ "and a.year >= :minYear"
-				+ "and a.year <= :maxYear"
-				+ "and a.city.id = :cityId")
+		return getSession().createQuery("from Advertisement a where a.model.id = :modelId "
+				+ " and a.price >= :minPrice "
+				+ " and a.price <= :maxPrice "
+				+ " and a.year >= :minYear"
+				+ " and a.year <= :maxYear"
+				+ " and a.user.city.id = :cityId")
 				.setInteger("modelId", modelId)
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
@@ -144,9 +144,9 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndYear(double minPrice, double maxPrice, int minYear, int maxYear) {
 		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
-				+ "and a.price <= :maxPrice"
-				+ "and a.year >= :minYear"
-				+ "and a.year <= :maxYear")
+				+ " and a.price <= :maxPrice"
+				+ " and a.year >= :minYear"
+				+ " and a.year <= :maxYear")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.setDouble("minYear", minYear)
@@ -157,8 +157,8 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndCity(double minPrice, double maxPrice, int cityId) {
 		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
-				+ "and a.price <= :maxPrice"
-				+ "and a.city.id = cityId")
+				+ " and a.price <= :maxPrice"
+				+ " and a.user.city.id = cityId")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.setInteger("cityId",cityId)
@@ -168,8 +168,8 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByPriceAndUser(double minPrice, double maxPrice, int userId) {
 		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
-				+ "and a.price <= :maxPrice"
-				+ "and a.city.id = cityId")
+				+ " and a.price <= :maxPrice"
+				+ " and a.user.city.id = cityId")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.setInteger("userId", userId)
@@ -180,10 +180,10 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	public List<Advertisement> getAllbyPriceAndYearAndCity(double minPrice, double maxPrice, int minYear, int maxYear,
 			int cityId) {
 		return getSession().createQuery("from Advertisement a where a.price >= :minPrice"
-				+ "and a.price <= :maxPrice"
-				+ "and a.year >= :minYear"
-				+ "and a.year <= :maxYear"
-				+ "and a.city.id = :cityId")
+				+ " and a.price <= :maxPrice"
+				+ " and a.year >= :minYear"
+				+ " and a.year <= :maxYear"
+				+ " and a.user.city.id = :cityId")
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
 				.setInteger("minYear", minYear)
@@ -195,7 +195,7 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByYear(int minYear, int maxYear) {
 		return getSession().createQuery("from Advertisement a where a.year >= :minYear"
-				+ "and a.year <= :maxYear")
+				+ " and a.year <= :maxYear")
 				.setInteger("minYear", minYear)
 				.setInteger("maxYear", maxYear)
 				.list();
@@ -204,8 +204,8 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByYearAndCity(int minYear, int maxYear, int cityId) {
 		return getSession().createQuery("from Advertisement a where a.year >= :minYear"
-				+ "and a.year <= :maxYear"
-				+ "and a.city.id = :cityId")
+				+ " and a.year <= :maxYear"
+				+ " and a.user.city.id = :cityId")
 				.setInteger("minYear", minYear)
 				.setInteger("maxYear", maxYear)
 				.setInteger("cityId", cityId)
@@ -214,7 +214,7 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Advertisement> getAllByCity(int cityId) {
-		return getSession().createQuery("from Advertisement a where a.city.id = :cityId")
+		return getSession().createQuery("from Advertisement a where a.user.city.id = :cityId")
 				.setInteger("cityId", cityId)
 				.list();
 	}

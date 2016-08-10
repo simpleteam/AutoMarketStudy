@@ -17,19 +17,19 @@ public class CityService {
 	@Autowired
 	private RegionDao regionDao;
 
-	public void add(CityView city) {
+	public void addCity(CityView city) {
 		cityDao.add(viewToEntity(city));
 	}
 
-	public CityView get(int id) {
+	public CityView getCity(int id) {
 		return new CityView(cityDao.get(id));
 	}
 
-	public void update(CityView city) {
+	public void updateCity(CityView city) {
 		cityDao.update(viewToEntity(city));
 	}
 
-	public void delete(CityView city) {
+	public void deleteCity(CityView city) {
 		cityDao.delete(viewToEntity(city));
 	}
 

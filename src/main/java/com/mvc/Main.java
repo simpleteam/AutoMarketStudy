@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dao.AdvertisementDao;
 import com.dao.CityDao;
 import com.dao.RegionDao;
 import com.entity.City;
 import com.entity.Region;
 import com.service.MarketService;
+import com.service.UserMarketService;
+import com.view.SearchView;
 
 
 
@@ -31,9 +34,10 @@ public class Main {
 	@Autowired
 	private CityDao cityDao;
 	
+	
 	@RequestMapping("/")
 	public String main(Model model){
-	
+		
 		return "index";
 	}
 	

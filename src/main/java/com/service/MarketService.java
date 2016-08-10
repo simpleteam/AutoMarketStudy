@@ -84,135 +84,135 @@ public class MarketService {
 	
 	
 	public void addRegion(RegionView region) {
-		regionService.add(region);
+		regionService.addRegion(region);
 	}
 
 	public RegionView getRegionById(int id) {
-		return regionService.get(id);
+		return regionService.getRegion(id);
 	}
 
 	public void updateRegion(RegionView region) {
-		regionService.update(region);
+		regionService.updateRegion(region);
 	}
 
 	public void deleteRegion(RegionView region) {
-		regionService.delete(region);
+		regionService.deleteRegion(region);
 	}
 	
 	public RegionView getRegionByName(String name) {
-		return regionService.getByName(name);
+		return regionService.getRegionByName(name);
 	}
 
 	public void addCity(CityView city) {
-		cityService.add(city);
+		cityService.addCity(city);
 	}
 
 	public CityView getCityById(int id) {
-		return cityService.get(id);
+		return cityService.getCity(id);
 	}
 
 	public void updateCity(CityView city) {
-		cityService.update(city);
+		cityService.updateCity(city);
 	}
 
 	public void deleteCity(CityView city) {
-		cityService.delete(city);
+		cityService.deleteCity(city);
 	}
 
 	public void addUser(UserView user) {
-		userService.add(user);
+		userService.addUser(user);
 	}
 
 	public UserView getUserById(int id) {
-		return userService.get(id);
+		return userService.getUser(id);
 	}
 
 	public void updateUser(UserView user) {
-		userService.update(user);
+		userService.updateUser(user);
 	}
 
 	public void deleteUser(UserView user) {
-		userService.delete(user);
+		userService.deleteUser(user);
 	}
 
 	public void addAdvertisement(AdvertisementView advertisement) {
-		advertisementService.add(advertisement);
+		advertisementService.addAdvertisement(advertisement);
 	}
 
 	public AdvertisementView getAdvertisementById(int id) {
-		return advertisementService.getById(id);
+		return advertisementService.getAdvertisementById(id);
 	}
 
 	public void updateAdvertisement(AdvertisementView advertisement) {
-		advertisementService.update(advertisement);
+		advertisementService.updateAdvertisement(advertisement);
 	}
 
 	public void deleteAdvertisement(AdvertisementView advertisement) {
-		advertisementService.delete(advertisement);
+		advertisementService.deleteAdvertisement(advertisement);
 	}
 
 	public void addPhoto(PhotoView photo) {
-		photoService.add(photo);
+		photoService.addPhoto(photo);
 	}
 
 	public PhotoView getPhotoById(int id) {
-		return photoService.get(id);
+		return photoService.getPhoto(id);
 	}
 
 	public void updatePhoto(PhotoView photo) {
-		photoService.update(photo);
+		photoService.updatePhoto(photo);
 	}
 
 	public void deletePhoto(PhotoView photo) {
-		photoService.delete(photo);
+		photoService.deletePhoto(photo);
 	}
 
 	public void addModel(ModelView model) {
-		modelService.add(model);
+		modelService.addModel(model);
 	}
 
 	public ModelView getModelById(int id) {
-		return modelService.get(id);
+		return modelService.getModel(id);
 	}
 
 	public void updateModel(ModelView model) {
-		modelService.update(model);
+		modelService.updateModel(model);
 	}
 
 	public void deleteModel(ModelView model) {
-		modelService.delete(model);
+		modelService.deleteModel(model);
 	}
 
 	public void addMark(MarkView mark) {
-		markService.add(mark);
+		markService.addMark(mark);
 	}
 
 	public MarkView getMarkById(int id) {
-		return markService.get(id);
+		return markService.getMark(id);
 	}
 
 	public void updateMark(MarkView mark) {
-		markService.update(mark);
+		markService.updateMark(mark);
 	}
 
 	public void deleteMark(MarkView mark) {
-		markService.delete(mark);
+		markService.deleteMark(mark);
 	}
 
 	public void addType(TypeView type) {
-		typeService.add(type);
+		typeService.addType(type);
 	}
 
 	public TypeView getTypeById(int id) {
-		return typeService.get(id);
+		return typeService.getType(id);
 	}
 
 	public void updateType(TypeView type) {
-		typeService.update(type);
+		typeService.updateType(type);
 	}
 
 	public void deleteType(TypeView type) {
-		typeService.delete(type);
+		typeService.deleteType(type);
 	}
 
 	public void addType(String nameOfType) {

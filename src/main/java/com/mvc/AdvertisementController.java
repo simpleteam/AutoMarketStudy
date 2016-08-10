@@ -59,21 +59,21 @@ public class AdvertisementController {
 	@RequestMapping(value = "/getAllById/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<AdvertisementView> getAdvertisementsByModel(@PathVariable("id") int modelId) {
-		return advertisementService.getAllByModel(modelId);
+		return advertisementService.getAllAdvertisementsByModel(modelId);
 	}
 
 	@RequestMapping(value = "/getAll/{min}/{max}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<AdvertisementView> getAdvertisementsByModel(@PathVariable("min") int min,
 			@PathVariable("max") int max) {
-		return advertisementService.getAllByPrice(min, max);
+		return advertisementService.getAllAdvertisementsByPrice(min, max);
 	}
 
 	@RequestMapping(value = "/getAll/{min}/{max}/{model}", method = RequestMethod.GET)
 	@ResponseBody
 	public List<AdvertisementView> getAdvertisementsByModel(@PathVariable("min") int min, @PathVariable("max") int max,
 			@PathVariable("model") int model) {
-		return advertisementService.getAllByModelAndPrice(model, min, max);
+		return advertisementService.getAllAdvertisementsByModelAndPrice(model, min, max);
 	}
 
 }

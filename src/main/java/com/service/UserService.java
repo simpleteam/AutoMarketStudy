@@ -19,19 +19,19 @@ public class UserService {
 	@Autowired
 	private CityDao cityDao;
 	
-	public void add(UserView user){
+	public void addUser(UserView user){
 		userDao.add(viewToEntity(user));
 	}
 	
-	public UserView get(int id){
+	public UserView getUser(int id){
 		return new UserView(userDao.get(id));
 	}
 	
-	public void update(UserView user){
+	public void updateUser(UserView user){
 		userDao.update(viewToEntity(user));
 	}
 	
-	public void delete(UserView user){
+	public void deleteUser(UserView user){
 		userDao.delete(viewToEntity(user));
 	}
 	

@@ -19,19 +19,19 @@ public class PhotoService {
 	@Autowired
 	private AdvertisementDao advertisementDao;
 	
-	public void add(PhotoView photo){
+	public void addPhoto(PhotoView photo){
 		photoDao.add(viewToEntity(photo));
 	}
 	
-	public PhotoView get(int id){
+	public PhotoView getPhoto(int id){
 		return new PhotoView(photoDao.get(id));
 	}
 	
-	public void update(PhotoView photo){
+	public void updatePhoto(PhotoView photo){
 		photoDao.update(viewToEntity(photo));
 	}
 	
-	public void delete(PhotoView photo){
+	public void deletePhoto(PhotoView photo){
 		photoDao.delete(viewToEntity(photo));
 	}
 	
