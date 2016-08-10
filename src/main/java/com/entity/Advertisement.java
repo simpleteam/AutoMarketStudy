@@ -24,7 +24,10 @@ public class Advertisement {
 	@Column(name = "price")
 	private double price;
 
-	@Column(name = " description")
+	@Column(name = "year")
+	private int year;
+
+	@Column(name = "description")
 	private String description;
 
 	@ManyToOne
@@ -52,6 +55,14 @@ public class Advertisement {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 	public String getDescription() {
@@ -84,6 +95,11 @@ public class Advertisement {
 
 	public void setPhotos(List<Photo> photos) {
 		this.photos = photos;
+	}
+
+	@Override
+	public String toString() {
+		return "Advertisement [id=" + id + ", price=" + price + ", description=" + description + "]";
 	}
 
 }
