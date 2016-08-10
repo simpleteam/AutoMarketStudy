@@ -18,19 +18,19 @@ public class ModelService {
 	@Autowired
 	private MarkDao markDao;
 
-	public void addModel(ModelView model) {
+	public void add(ModelView model) {
 		modelDao.add(viewToEntity(model));
 	}
 
-	public ModelView getModelById(int id) {
+	public ModelView get(int id) {
 		return new ModelView(modelDao.get(id));
 	}
 
-	public void updateModel(ModelView model) {
+	public void update(ModelView model) {
 		modelDao.update(viewToEntity(model));
 	}
 
-	public void deleteModel(ModelView model) {
+	public void delete(ModelView model) {
 		modelDao.delete(viewToEntity(model));
 	}
 
