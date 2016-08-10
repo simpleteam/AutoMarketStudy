@@ -33,13 +33,13 @@ public class AdvertisementController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public String showAdvertisement(@PathVariable("id") int id, Model model) {
-		model.addAttribute("region", service.getAdvertisementById(id));
-		return "/region/advertisementDetails";
+		model.addAttribute("advertisement", service.getAdvertisementById(id));
+		return "/advertisement/advertisementDetails";
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public String initCreationAdvertisement(Model model) {
-		model.addAttribute("region", new AdvertisementView());
+		model.addAttribute("advertisement", new AdvertisementView());
 		return "/advertisement/initCreateAdvertisement";
 	}
 
@@ -57,7 +57,7 @@ public class AdvertisementController {
 		model.addAttribute("advertisement", advertisement);
 
 		// regionDao.add(region);
-		return "redirect:/region/" + advertisement.getId();
+		return "redirect:/advertisement/" + advertisement.getId();
 	}
 	
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
