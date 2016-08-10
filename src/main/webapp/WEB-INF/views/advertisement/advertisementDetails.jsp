@@ -8,7 +8,8 @@
 </head>
 <body>
 
-	region : ${region.region}
+	year  : ${advertisement.year}<br>
+	price : ${advertisement.price}
 
 
 </body>
