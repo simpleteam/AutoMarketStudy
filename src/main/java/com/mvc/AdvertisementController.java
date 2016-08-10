@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.service.AdvertisementService;
 import com.service.MarketService;
+import com.service.UserMarketService;
 import com.view.AdvertisementView;
+import com.view.SearchView;
 
 @Controller
 @RequestMapping("/advertisement")
@@ -22,6 +24,9 @@ public class AdvertisementController {
 	@Autowired
 	private MarketService service;
 
+	@Autowired
+	private UserMarketService UserMarketService;
+	
 	@Autowired
 	private AdvertisementService advertisementService;
 
@@ -50,6 +55,24 @@ public class AdvertisementController {
 		return "redirect:/advertisement/" + advertisement.getId();
 	}
 
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public String initFindAdvertisements(Model model){
+		model.addAttribute("search", new SearchView());
+		return "/advertisement/initFindAdvertisement";
+	}
+	
+	@RequestMapping(value = "/found", method = RequestMethod.GET)
+	public String processFindAdvertisements(SearchView search, BindingResult result, Model model){
+		if(result.hasErrors()){
+			model.addAttribute("search",search);
+			return "/advertisement/initFindAdvertisement";
+		}
+		List<AdvertisementView> advertisements = UserMarketService.getAdvertisements(search);
+		System.out.println(advertisements);
+		model.addAttribute("advertisements", advertisements);
+		return "/advertisement/advertisementDetails";
+	}
+	
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	@ResponseBody
 	public List<AdvertisementView> getAllAdvertisements() {

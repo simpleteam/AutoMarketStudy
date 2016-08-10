@@ -28,21 +28,25 @@ public class UserMarketService {
 		int maxYear = search.getMaxYear() != 0 ? search.getMaxYear() : Integer.MAX_VALUE;
 
 		if (isModel & isCity) {
+			System.out.println("===========MODEL AND CITY==============");
 			return advertisementService.getAllAdvertisementsByModelAndPriceAndYearAndCity(modelId, minPrice, maxPrice,
 					minYear, maxYear, cityId);
 		}
 
 		if (isModel) {
+			System.out.println("===========MODEL====================");
 			return advertisementService.getAllAdvertisementsByModelAndPriceAndYear(modelId, minPrice, maxPrice, minYear,
 					maxYear);
 		}
 
-		if (isCity) {			
+		if (isCity) {
+			System.out.println("===========CITY====================");
 			return advertisementService.getAllAdvertisementsByPriceAndYearAndCity(minPrice, maxPrice, minYear, maxYear,
 					cityId);
 		}
 
-		return advertisementService.getAllAdvertisementsByPriceAndYear(0, 100000, 2001, 2010);
+		System.out.println("==============OTHER=================");
+		return advertisementService.getAllAdvertisementsByPriceAndYear(minPrice, maxPrice, minYear, maxYear);
 
 	}
 

@@ -101,7 +101,7 @@ public class AdvertisementDaoImpl extends Dao implements AdvertisementDao {
 				+ " and a.price >= :minPrice"
 				+ " and a.price <= :maxPrice"
 				+ " and a.year >= :minYear"
-				+ " and a.year >= :maxYear")
+				+ " and a.year <= :maxYear")
 				.setInteger("modelId", modelId)
 				.setDouble("minPrice", minPrice)
 				.setDouble("maxPrice", maxPrice)
