@@ -15,19 +15,19 @@ public class TypeService {
 	@Autowired
 	private TypeDao typeDao;
 	
-	public void addType(TypeView type){
+	public void add(TypeView type){
 		typeDao.add(viewToEntity(type));
 	}
 	
-	public TypeView getTypeById(int id){
+	public TypeView get(int id){
 		return new TypeView(typeDao.get(id));
 	}
 	
-	public void updateType(TypeView type){
+	public void update(TypeView type){
 		typeDao.update(viewToEntity(type));
 	}
 	
-	public void deleteType(TypeView type){
+	public void delete(TypeView type){
 		typeDao.delete(viewToEntity(type));
 	}
 	
