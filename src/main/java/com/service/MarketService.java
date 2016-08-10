@@ -84,55 +84,55 @@ public class MarketService {
 	
 	
 	public void addRegion(RegionView region) {
-		regionService.addRegion(region);
+		regionService.add(region);
 	}
 
 	public RegionView getRegionById(int id) {
-		return regionService.getRegionById(id);
+		return regionService.get(id);
 	}
 
 	public void updateRegion(RegionView region) {
-		regionService.updateRegion(region);
+		regionService.update(region);
 	}
 
 	public void deleteRegion(RegionView region) {
-		regionService.deleteRegion(region);
+		regionService.delete(region);
 	}
 	
 	public RegionView getRegionByName(String name) {
-		return regionService.getRegionByName(name);
+		return regionService.getByName(name);
 	}
 
 	public void addCity(CityView city) {
-		cityService.addCity(city);
+		cityService.add(city);
 	}
 
 	public CityView getCityById(int id) {
-		return cityService.getCityById(id);
+		return cityService.get(id);
 	}
 
 	public void updateCity(CityView city) {
-		cityService.updateCity(city);
+		cityService.update(city);
 	}
 
 	public void deleteCity(CityView city) {
-		cityService.deleteCity(city);
+		cityService.delete(city);
 	}
 
 	public void addUser(UserView user) {
-		userService.addUser(user);
+		userService.add(user);
 	}
 
 	public UserView getUserById(int id) {
-		return userService.getUserById(id);
+		return userService.get(id);
 	}
 
 	public void updateUser(UserView user) {
-		userService.updateUser(user);
+		userService.update(user);
 	}
 
 	public void deleteUser(UserView user) {
-		userService.deleteUser(user);
+		userService.delete(user);
 	}
 
 	public void addAdvertisement(AdvertisementView advertisement) {
@@ -152,67 +152,67 @@ public class MarketService {
 	}
 
 	public void addPhoto(PhotoView photo) {
-		photoService.addPhoto(photo);
+		photoService.add(photo);
 	}
 
 	public PhotoView getPhotoById(int id) {
-		return photoService.getPhotoById(id);
+		return photoService.get(id);
 	}
 
 	public void updatePhoto(PhotoView photo) {
-		photoService.updatePhoto(photo);
+		photoService.update(photo);
 	}
 
 	public void deletePhoto(PhotoView photo) {
-		photoService.deletePhoto(photo);
+		photoService.delete(photo);
 	}
 
 	public void addModel(ModelView model) {
-		modelService.addModel(model);
+		modelService.add(model);
 	}
 
 	public ModelView getModelById(int id) {
-		return modelService.getModelById(id);
+		return modelService.get(id);
 	}
 
 	public void updateModel(ModelView model) {
-		modelService.updateModel(model);
+		modelService.update(model);
 	}
 
 	public void deleteModel(ModelView model) {
-		modelService.deleteModel(model);
+		modelService.delete(model);
 	}
 
 	public void addMark(MarkView mark) {
-		markService.addMark(mark);
+		markService.add(mark);
 	}
 
 	public MarkView getMarkById(int id) {
-		return markService.getMarkById(id);
+		return markService.get(id);
 	}
 
 	public void updateMark(MarkView mark) {
-		markService.updateMark(mark);
+		markService.update(mark);
 	}
 
 	public void deleteMark(MarkView mark) {
-		markService.deleteMark(mark);
+		markService.delete(mark);
 	}
 
 	public void addType(TypeView type) {
-		typeService.addType(type);
+		typeService.add(type);
 	}
 
 	public TypeView getTypeById(int id) {
-		return typeService.getTypeById(id);
+		return typeService.get(id);
 	}
 
 	public void updateType(TypeView type) {
-		typeService.updateType(type);
+		typeService.update(type);
 	}
 
 	public void deleteType(TypeView type) {
-		typeService.deleteType(type);
+		typeService.delete(type);
 	}
 
 	public void addType(String nameOfType) {
