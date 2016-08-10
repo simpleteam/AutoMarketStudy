@@ -136,19 +136,19 @@ public class MarketService {
 	}
 
 	public void addAdvertisement(AdvertisementView advertisement) {
-		advertisementService.addAdvertisement(advertisement);
+		advertisementService.add(advertisement);
 	}
 
 	public AdvertisementView getAdvertisementById(int id) {
-		return advertisementService.getAdvertisementById(id);
+		return advertisementService.getById(id);
 	}
 
 	public void updateAdvertisement(AdvertisementView advertisement) {
-		advertisementService.updateAdvertisement(advertisement);
+		advertisementService.update(advertisement);
 	}
 
 	public void deleteAdvertisement(AdvertisementView advertisement) {
-		advertisementService.deleteAdvertisement(advertisement);
+		advertisementService.delete(advertisement);
 	}
 
 	public void addPhoto(PhotoView photo) {
