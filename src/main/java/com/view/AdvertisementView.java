@@ -5,11 +5,10 @@ import java.util.List;
 import com.entity.Advertisement;
 import com.entity.Photo;
 
-
-
 public class AdvertisementView {
 
 	private int id;
+	private int year;
 	private ModelView model;
 	private List<PhotoView> photos;
 	private double price;
@@ -21,6 +20,7 @@ public class AdvertisementView {
 
 	public AdvertisementView(Advertisement advertisement) {
 		this.id = advertisement.getId();
+		this.year = advertisement.getYear();
 		this.model = new ModelView(advertisement.getModel());
 		for (Photo photo : advertisement.getPhotos()) {
 			photos.add(new PhotoView(photo));
@@ -36,6 +36,14 @@ public class AdvertisementView {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 	public ModelView getModel() {
