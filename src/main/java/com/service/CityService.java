@@ -8,8 +8,6 @@ import com.dao.RegionDao;
 import com.entity.City;
 import com.view.CityView;
 
-
-
 @Service
 public class CityService {
 
@@ -19,19 +17,19 @@ public class CityService {
 	@Autowired
 	private RegionDao regionDao;
 
-	public void addCity(CityView city) {
+	public void add(CityView city) {
 		cityDao.add(viewToEntity(city));
 	}
 
-	public CityView getCityById(int id) {
+	public CityView get(int id) {
 		return new CityView(cityDao.get(id));
 	}
 
-	public void updateCity(CityView city) {
+	public void update(CityView city) {
 		cityDao.update(viewToEntity(city));
 	}
 
-	public void deleteCity(CityView city) {
+	public void delete(CityView city) {
 		cityDao.delete(viewToEntity(city));
 	}
 
@@ -42,10 +40,5 @@ public class CityService {
 		entityCity.setRegion(regionDao.get(city.getRegion().getId()));
 		return entityCity;
 	}
-	
-//	private CityView entityToView(City city){
-//		CityView viewCity = new CityView();
-//		return null;
-//	}
 
 }
