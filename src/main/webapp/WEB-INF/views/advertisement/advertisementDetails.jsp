@@ -9,6 +9,7 @@
 <title>Bootstrap 101 Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
+<script type="text/javascript" src="../resources/jquery.js"></script>
 <link href="../resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="resources/css/NewFile.css" rel="stylesheet" >
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,7 +26,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../resources/js/bootstrap.min.js"></script>
 
-	<table class="table table-condensed" >
+	<table class="table table-inverse" >
 		<thead>
 				<tr>
 					<th>year</th><th>price</th>
@@ -35,12 +36,15 @@
 		<c:forEach items="${advertisements}" var="advertisement">
 			
 			<tbody>
-				<tr class="success">
-					<td  >${advertisement.year}</td><td> ${advertisement.price}</td>
+				<tr">
+					<td >${advertisement.year}</td><td> ${advertisement.price}</td>
 				</tr>
 			</tbody>
 		</c:forEach>
 	</table>
+	
+	
+	
 	
 	
 <button type="button" class="btn btn-ttc">Save changes</button>
