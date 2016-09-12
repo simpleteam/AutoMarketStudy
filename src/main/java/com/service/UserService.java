@@ -36,11 +36,13 @@ public class UserService {
 	}
 	
 	private User viewToEntity(UserView user){
+		System.out.println("==================================================================");
 		User entityUser = new User();
 		entityUser.setId(user.getId());
 		entityUser.setName(user.getName());
 		entityUser.setPassword(user.getPassword());
 		entityUser.setPhone(user.getPhone());
+		System.out.println("------------------------------------------------------------------");
 		entityUser.setCity(cityDao.get(user.getCity().getId()));
 		return entityUser;
 	}

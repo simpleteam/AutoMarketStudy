@@ -38,7 +38,7 @@ public class Main {
 	@RequestMapping("/")
 	public String main(Model model){
 		
-		return "/advertisement/NewFile";
+		return "/index";
 	}
 	
 	@RequestMapping(value="/j", method = RequestMethod.GET)
